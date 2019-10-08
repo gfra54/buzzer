@@ -1,0 +1,30 @@
+{
+	"duree" : 360,
+	"lots" : [
+		{
+			"nom" : "une carte cadeau d'une valeur de 500€",
+			"qte" : 1,
+			"image" : "carte-cadeau.png" 
+		},
+		{
+			"nom" : "une carte cadeau d'une valeur de 10€",
+			"qte" : 13,
+			"image" : "carte-cadeau.png" 
+		},
+		{
+			"nom" : "une carte cadeau d'une valeur de 20€",
+			"qte" : 6,
+			"image" : "carte-cadeau.png" 
+		},
+		{
+			"nom" : "un relooking d'une valeur de 200€",
+			"qte" : 1,
+			"image" : "relooking.jpg" 
+		},
+		{
+			"nom" : "un lot suprise",
+			"qte" : 275,
+			"image" : "cadeau-surprise.jpg" 
+		}
+	]
+}
