@@ -64,7 +64,7 @@ body,html{
     left:15%;
     width:70%;
     height:100%;
-    background:url(/static/img/buzzez.3178a16.png) no-repeat 50%;
+    background:url(/static/img/buzzez.gif) no-repeat 50%;
     background-size:contain;
     transition:transform .5s cubic-bezier(.79,-.285,.34,1.335),opacity .5s ease;
     transform:scale(.1);
