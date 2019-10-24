@@ -18,7 +18,7 @@
 		},
 		{
 			"nom" : "un relooking d'une valeur de 200€",
-			"qte" : 1,
+			"qte" : 3,
 			"image" : "relooking.jpg",
 			"heures" : {"debut":"14","fin":"18"}
 		},

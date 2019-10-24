@@ -17,11 +17,6 @@
 			"image" : "carte-cadeau.png" 
 		},
 		{
-			"nom" : "un relooking d'une valeur de 200€",
-			"qte" : 1,
-			"image" : "relooking.jpg" 
-		},
-		{
 			"nom" : "un lot suprise",
 			"qte" : 250,
 			"image" : "cadeau-surprise.jpg" 
