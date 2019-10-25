@@ -8,7 +8,7 @@
 		},
 		{
 			"nom" : "une carte cadeau d'une valeur de 10€",
-			"qte" : 13,
+			"qte" : 23,
 			"image" : "carte-cadeau.png" 
 		},
 		{
@@ -18,7 +18,7 @@
 		},
 		{
 			"nom" : "un lot suprise",
-			"qte" : 275,
+			"qte" : 175,
 			"image" : "cadeau-surprise.jpg" 
 		}
 	]

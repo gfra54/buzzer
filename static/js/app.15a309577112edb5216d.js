@@ -1,3 +1,5 @@
+var resetStorage=0;
+var chances = 4;
 var DATE=false;
 if(window.location.hash) {
 	var TEST=window.location.hash.includes('test');
@@ -149,10 +151,13 @@ webpackJsonp([1], {
 				finduJeu: function() {
 					var t = this;
 					this.finJeu = !0;
-					var n = Math.floor(2 * Math.random()) + 1;
+					//var n = Math.floor(2 * Math.random()) + 1;
+					var n = Math.floor(chances * Math.random());
 					if(TEST) n=2;
 					
-					if (this.gagnant = 2 == n, this.gagnant) {
+					this.gagnant = n != 0;
+
+					if (this.gagnant) {
 						var e = Math.floor(Math.random() * this.$store.state.population.length);
 						let tmp_lot = this.$store.state.population[e];
 						if(tmp_lot.heures != undefined) {
@@ -245,7 +250,16 @@ webpackJsonp([1], {
 				setTimeout(function() {
 					t.animationBouton = !0
 				}, 3e3), window.onkeydown = function(n) {
-					console.log(t.okFin);
+					var keycode = (n = n || window.event).keyCode;
+					console.log(keycode);
+					if(keycode == 67) {
+						resetStorage++;
+						if(resetStorage == 3) {
+							localStorage.removeItem(window.utils.store());
+							alert('Le cache a été vidé');
+							window.location.reload()
+						}
+					}
 					32 == (n = n || window.event).keyCode && (t.okFin && (document.location.reload()), t.buzzz || (window.ion.sound.play("gong"), t.buzzz = !0, t.$bus.$emit("start")))
 				}, this.$bus.$on("fin", function() {
 					t.okFin = !0

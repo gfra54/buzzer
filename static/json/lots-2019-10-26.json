@@ -8,7 +8,7 @@
 		},
 		{
 			"nom" : "une carte cadeau d'une valeur de 10€",
-			"qte" : 19,
+			"qte" : 29,
 			"image" : "carte-cadeau.png" 
 		},
 		{
@@ -18,13 +18,13 @@
 		},
 		{
 			"nom" : "un relooking d'une valeur de 200€",
-			"qte" : 3,
+			"qte" : 2,
 			"image" : "relooking.jpg",
 			"heures" : {"debut":"14","fin":"18"}
 		},
 		{
 			"nom" : "un lot suprise",
-			"qte" : 275,
+			"qte" : 175,
 			"image" : "cadeau-surprise.jpg" 
 		}
 	]
