@@ -152,25 +152,33 @@ webpackJsonp([1], {
 					var t = this;
 					this.finJeu = !0;
 					//var n = Math.floor(2 * Math.random()) + 1;
-					var n = Math.floor(chances * Math.random());
-					if(TEST) n=2;
+					// var n = Math.floor(chances * Math.random());
+//					if(TEST) n=2;
+					//this.gagnant = n != 0;
+					var n = Math.floor(10 * Math.random());
 					
-					this.gagnant = n != 0;
+					this.gagnant= n==0 ? false : true;
 
 					if (this.gagnant) {
 						var e = Math.floor(Math.random() * this.$store.state.population.length);
 						let tmp_lot = this.$store.state.population[e];
-						if(tmp_lot.heures != undefined) {
-							var ladate = new Date();
-							var heure = ladate.getHours();
-							if(heure >= tmp_lot.heures.debut && heure <= tmp_lot.heures.fin) {
-								this.lot = tmp_lot;
-							} else {
-								this.gagnant=false;								
-							}
+						if(tmp_lot == undefined) {
+							this.gagnant = false;
 						} else {
-							this.lot = tmp_lot;
+							if(tmp_lot.heures != undefined) {
+								var ladate = new Date();
+								var heure = ladate.getHours();
+								if(heure >= tmp_lot.heures.debut && heure <= tmp_lot.heures.fin) {
+									this.lot = tmp_lot;
+								} else {
+									this.gagnant=false;								
+								}
+							} else {
+								this.lot = tmp_lot;
+							}
 						}
+					} else {
+						console.log('pas de bol')
 					}
 					if(this.gagnant) {
 						this.$store.commit("removeLot", e);
@@ -256,7 +264,7 @@ webpackJsonp([1], {
 						resetStorage++;
 						if(resetStorage == 3) {
 							localStorage.removeItem(window.utils.store());
-							alert('Le cache a été vidé');
+							console.log('Le cache a été vidé');
 							window.location.reload()
 						}
 					}
@@ -449,4 +457,3 @@ webpackJsonp([1], {
 	kbrB: function(t, n) {},
 	sjNH: function(t, n) {}
 }, ["NHnr"]);
-//# sourceMappingURL=app.15a309577112edb5216d.js.map
