@@ -27,7 +27,7 @@ body,html{
     top:-200px;
     width:100%;
     left:0;
-    height:97px;
+    height:150px;
 	/*border-bottom: 3px solid #d2232a;*/
 
     transition:top .5s cubic-bezier(.79,-.285,.34,1.335),opacity .5s ease;
@@ -54,11 +54,11 @@ body,html{
     width:60%;
     right:0;
     background:url(/static/img/grand-openin.a4ee497.png) no-repeat 50%;
-    background-size:auto 50%
+    background-size:auto 80%
 }
 .body{
     position:fixed;
-    top:100px;
+    top:150px;
     width:100%;
     left:0;
     height:calc(100% - 200px)
@@ -291,6 +291,7 @@ body,html{
     background: url(/static/img/footer.png), url(/static/img/dots.png), linear-gradient(to right, rgba(107,107,107,1) 0%,rgba(64,59,56,1) 100%); 
     background-position: center center, bottom right, center center;
     background-repeat: no-repeat, repeat, repeat;
+    background-size: auto 100%, auto, auto;
 }
 .footerReady{
     bottom:0;
