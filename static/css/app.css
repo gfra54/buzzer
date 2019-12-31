@@ -27,7 +27,7 @@ body,html{
     top:-200px;
     width:100%;
     left:0;
-    height:150px;
+    height:15vh;
 	/*border-bottom: 3px solid #d2232a;*/
 
     transition:top .5s cubic-bezier(.79,-.285,.34,1.335),opacity .5s ease;
@@ -61,10 +61,10 @@ body,html{
 }*/
 .body{
     position:fixed;
-    top:150px;
+    top:15vh;
     width:100%;
     left:0;
-    height:calc(100% - 200px)
+    height:calc(100% - 25vh)
 }
 .bouton{
     position:absolute;
@@ -286,7 +286,7 @@ body,html{
     bottom:-200px;
     width:100%;
     left:0;
-    height:100px;
+    height:10vh;
 /*    background:#d1232a url(/static/img/a-gagner.38a26a0.png) no-repeat 50%;
     background-size:auto 100%;*/
     opacity:0;
