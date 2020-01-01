@@ -28,12 +28,12 @@
 		},
 		{
 			"nom" : "une carte cadeau d'une valeur de 10€",
-			"qte" : 25,
+			"qte" : 20,
 			"image" : "carte-cadeau.png" 
 		},
 		{
 			"nom" : "une carte cadeau d'une valeur de 20€",
-			"qte" : 15,
+			"qte" : 10,
 			"image" : "carte-cadeau.png" 
 		}
 	]

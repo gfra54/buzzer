@@ -3,12 +3,27 @@
  <head>
   <meta charset="UTF-8">
   <title>Buzzer</title>
+  <style>
+  	.block {
+  		display: inline-block;
+		background: black;
+  		width:150px;
+  		height:150px;
+  		text-align: center;
+  		line-height: 150px;
+  		margin: 15px;
+		color:white;
+		text-decoration: none;
+	}
+  	.block:hover, .block.selected {
+  		background: green;
+  	}
+  </style>
  </head>
  <body>
   
 <h1>Buzzer</h1>
 <h3>Choisir la date</h3>
-<ul>
 	<script>
 		let dates = [
 			'2020-01-01',
@@ -24,10 +39,19 @@
 			'2020-01-11'
 		];
 		dates.forEach(function(date){
-			document.write('<li><a href="jeu.html#date='+date+'">'+date+'</a></li>');
+			let today = new Date();
+			let dd = String(today.getDate()).padStart(2, '0');
+			let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+			let yyyy = today.getFullYear();
+
+			today = yyyy + '-' + dd + '-' + mm;
+
+			let tmp = date.split('-');
+			let txt = tmp[2]+'/'+tmp[1]+'/'+tmp[0];
+			document.write('<a class="block '+(today==date ? 'selected' : '')+'" href="jeu.html#date='+date+'">'+txt+'</a>');
 		});
 	</script>
-</ul>
+
 <p>Après avoir ouvert la page, appuyez sur F11 pour mettre la fenêtre en plein écran</p>
 <p>appuyer 3 fois sur c pour vider le cache des lots du jour</p>
 

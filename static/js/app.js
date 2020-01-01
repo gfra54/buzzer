@@ -365,7 +365,7 @@ webpackJsonp([1], {
 		}, null, null).exports,
 		m = {
 			store: function() {
-				return "store-" + (DATE ? DATE : window.utils.date())
+				return "store-buzzer-" + (DATE ? DATE : window.utils.date())
 			},
 			date: function() {
 				var t = new Date,
