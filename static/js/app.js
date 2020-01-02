@@ -155,9 +155,9 @@ webpackJsonp([1], {
 					// var n = Math.floor(chances * Math.random());
 //					if(TEST) n=2;
 					//this.gagnant = n != 0;
-					var n = Math.floor(3 * Math.random());
-					
-					this.gagnant= n==0 ? false : true;
+					var n = Math.floor(10 * Math.random());
+					console.log(n)
+					this.gagnant= n==0 ? true : false;
 
 					if (this.gagnant) {
 						var e = Math.floor(Math.random() * this.$store.state.population.length);
