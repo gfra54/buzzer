@@ -3,6 +3,13 @@ body,html{
     height:100%;
     width:100%
 }
+.version {
+    color:#ccc;
+    font-size: 10px;
+    position: fixed;
+    bottom:5px;
+    left:5px;
+}
 * {
     cursor:none !important;
 }
