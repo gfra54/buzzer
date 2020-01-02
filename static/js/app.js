@@ -1,6 +1,7 @@
 var resetStorage=0;
 var chances = 4;
 var DATE=false;
+var WIN=false;
 if(window.location.hash) {
 	var TEST=window.location.hash.includes('test');
 
@@ -140,7 +141,7 @@ webpackJsonp([1], {
 					var t = this;
 					this.$bus.$emit("lignes", !1), window.lancerCompteur = setInterval(function() {
 						t.compteur < 2 ? (clearInterval(window.lancerCompteur), t.end()) : (window.ion.sound.play("bip"), t.compteur--)
-					}, 1e3)
+					}, 500)
 				},
 				end: function() {
 					var t = this;
@@ -157,9 +158,9 @@ webpackJsonp([1], {
 					//this.gagnant = n != 0;
 					var n = Math.floor(10 * Math.random());
 					console.log(n)
-					this.gagnant= n==0 ? true : false;
-
+					this.gagnant= WIN || n==0 ? true : false;
 					if (this.gagnant) {
+						WIN=false;
 						var e = Math.floor(Math.random() * this.$store.state.population.length);
 						let tmp_lot = this.$store.state.population[e];
 						if(tmp_lot == undefined) {
@@ -180,6 +181,8 @@ webpackJsonp([1], {
 					} else {
 						console.log('pas de bol')
 					}
+					this.$store.commit("compterJeu");
+
 					if(this.gagnant) {
 						this.$store.commit("removeLot", e);
 						window.ion.sound.play("tada");
@@ -259,7 +262,6 @@ webpackJsonp([1], {
 					t.animationBouton = !0
 				}, 1e3), window.onkeydown = function(n) {
 					var keycode = (n = n || window.event).keyCode;
-					console.log(keycode);
 					if(keycode == 67) {
 						resetStorage++;
 						if(resetStorage == 3) {
@@ -390,6 +392,7 @@ webpackJsonp([1], {
 		s.a.use(p.a);
 		var R = new p.a.Store({
 			state: {
+				jeux: 0,
 				lots: [],
 				population: !1
 			},
@@ -405,9 +408,15 @@ webpackJsonp([1], {
 				removeLot: function(t, n) {
 					t.population.splice(n, 1)
 				},
+				compterJeu: function(t) {
+					t.jeux++
+				},
 				initialiseStore: function(t) {
 					if (localStorage.getItem(window.utils.store())) {
 						var n = JSON.parse(localStorage.getItem(window.utils.store()));
+						$.post('https://tools.sopress.net/propuls/buzzer/',{store_name:window.utils.store(),store:n}).then(function(data) {
+							console.log(data)
+						})
 						this.replaceState(E()(t, n))
 					}
 				}
