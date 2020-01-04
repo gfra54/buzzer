@@ -156,7 +156,7 @@ webpackJsonp([1], {
 					// var n = Math.floor(chances * Math.random());
 //					if(TEST) n=2;
 					//this.gagnant = n != 0;
-					var n = Math.floor(10 * Math.random());
+					var n = Math.floor(30 * Math.random());
 					console.log(n)
 					this.gagnant= WIN || n==0 ? true : false;
 					if (this.gagnant) {
@@ -367,7 +367,7 @@ webpackJsonp([1], {
 		}, null, null).exports,
 		m = {
 			store: function() {
-				return "store-buzzer-" + (DATE ? DATE : window.utils.date())
+				return "store-buzzer-maj-" + (DATE ? DATE : window.utils.date())
 			},
 			date: function() {
 				var t = new Date,

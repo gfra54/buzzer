@@ -2,8 +2,13 @@
 	"duree" : 300,
 	"lots" : [
 		{
+			"nom" : "une carte cadeau d'une valeur de 1000€ !",
+			"qte" : 1,
+			"image" : "carte-cadeau.png" 
+		},
+		{
 			"nom" : "un totebag",
-			"qte" : 40,
+			"qte" : 50,
 			"image" : "sac.png" 
 		},
 		{
@@ -23,7 +28,7 @@
 		},
 		{
 			"nom" : "une carte cadeau d'une valeur de 10€",
-			"qte" : 15,
+			"qte" : 20,
 			"image" : "carte-cadeau.png" 
 		},
 		{
