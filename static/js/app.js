@@ -336,8 +336,7 @@ webpackJsonp([1], {
 			},
 			mounted: function() {
 				var t = this;
-				this.fullscreen = !0, window.axios.get("lots"+(DATE ? "-"+DATE : "")+".json").then(function(n) {
-					console.log(n.data);
+				this.fullscreen = !0, window.axios.get("lots"+(DATE ? "-"+DATE : "")+".json?maj").then(function(n) {
 					t.$store.commit("setLots", n.data)
 				})
 			},
@@ -368,7 +367,7 @@ webpackJsonp([1], {
 		}, null, null).exports,
 		m = {
 			store: function() {
-				return "store-buzzer-maj-encore-" + (DATE ? DATE : window.utils.date())
+				return "store-buzzer-zou-" + (DATE ? DATE : window.utils.date())
 			},
 			date: function() {
 				var t = new Date,
