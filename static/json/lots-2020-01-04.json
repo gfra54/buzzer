@@ -10,7 +10,7 @@
 			"nom" : "une carte cadeau d'une valeur de 10€",
 			"qte" : 10,
 			"image" : "carte-cadeau.png" 
-		},
+		}
 	]
 }
 
