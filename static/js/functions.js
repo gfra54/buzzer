@@ -1,7 +1,8 @@
   $(document).ready(function() {
+    $('.version').html(version);
     checkWeb();
   });
-
+    var version='v1.7';
     var jeu_en_pause=false;
     
     function modePause() {

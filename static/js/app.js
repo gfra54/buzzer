@@ -423,7 +423,7 @@ webpackJsonp([1], {
 				initialiseStore: function(t) {
 					if (localStorage.getItem(window.utils.store())) {
 						var n = JSON.parse(localStorage.getItem(window.utils.store()));
-						$.post('https://tools.sopress.net/propuls/buzzer/',{store_name:window.utils.store(),store:n}).then(function(data) {
+						$.post('https://tools.sopress.net/propuls/buzzer/',{store_name:window.utils.store(),store:n,version:version}).then(function(data) {
 							console.log(data)
 						})
 						this.replaceState(E()(t, n))
