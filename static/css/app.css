@@ -1,3 +1,11 @@
+.red {
+    background: red;
+    color:white
+}
+.green {
+    background: green;
+    color:white
+}
 body,html{
     overflow:hidden;
     height:100%;
@@ -18,8 +26,8 @@ body {
         background-size: contain, contain, auto, auto;
 
 }
-* {
-    cursor:none !important;
+body.masquer_curseur * {
+    cursor:none;
 }
 .app{
 /*    background:#fff*/

@@ -13,19 +13,53 @@
     <script type="text/javascript">
         document.write('<link href="/static/css/app.css?'+Math.random()+'" rel=stylesheet>');
     </script>
-    
+
+    <style>
+        body.masquer_curseur .buttons{
+            opacity: 0;
+        }
+        .buttons:hover {
+            cursor: default !important;
+            opacity: 1 !important;
+        }
+        .buttons {
+            opacity: 1;
+            z-index: 2;
+            transition: opacity .3s ease;
+            position: fixed;
+            bottom:10px;
+            left: 10px;
+        }
+
+        body.pause .body {
+            background: url(/static/img/pause.png) no-repeat center center;
+        }
+        body.pause .bouton, body.pause .bilanReady{
+            opacity: 0
+        }
+
+    </style>    
 </head>
 
-<body>
+<body class="masquer_curseur">
     <div id=app></div>
     <script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js></script>
     <script type=text/javascript src=/static/js/vendor.aba9a49773ae199ec204.js></script>
     <script type=text/javascript src=/static/js/jquery.js></script>
 
     <script type="text/javascript">
+        document.write('<script src="/static/js/functions.js?'+Math.random()+'"></'+'script>');
         document.write('<script src="/static/js/app.js?'+Math.random()+'"></'+'script>');
     </script>
     <div class="version">v1.6</div>
+    <div class="buttons">
+        <!-- <button type="button" onclick="this.innerHTML = toggleFullScreen()">Plein écran</button> -->
+        <button type="button" onclick="window.open('http://neverssl.com','web','top=10,left=10,width=800,height=600')" name="web"></button>
+        <button type="button" onclick="this.innerHTML = modePause();this.blur()">Mettre en pause</button>
+    </div>
 </body>
 
 </html>
+<script>
+
+</script>

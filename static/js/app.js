@@ -10,6 +10,14 @@ if(window.location.hash) {
 		DATE=tmp[1];
 	}
 }
+var stim = false;
+window.addEventListener('mousemove',function() {
+	$('body').removeClass('masquer_curseur');
+	clearTimeout(stim);
+	stim = setTimeout(function() {
+		$('body').addClass('masquer_curseur');
+	},500);
+});
 console.log(DATE)
 webpackJsonp([1], {
 	"+Rsi": function(t, n) {},
@@ -261,6 +269,7 @@ webpackJsonp([1], {
 				setTimeout(function() {
 					t.animationBouton = !0
 				}, 1e3), window.onkeydown = function(n) {
+					if(jeu_en_pause) return;
 					var keycode = (n = n || window.event).keyCode;
 					if(keycode == 67) {
 						resetStorage++;
