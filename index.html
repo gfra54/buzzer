@@ -48,7 +48,7 @@
 
 			let tmp = date.split('-');
 			let txt = tmp[2]+'/'+tmp[1]+'/'+tmp[0];
-			document.write('<a class="block '+(today==date ? 'selected' : '')+'" href="jeu.html#date='+date+'">'+txt+'</a>');
+			document.write('<a class="block '+(today==date ? 'selected' : '')+'" href="jeu.html?'+Math.random()+'#date='+date+'">'+txt+'</a>');
 		});
 	</script>
 

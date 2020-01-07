@@ -2,7 +2,7 @@
     $('.version').html(version);
     checkWeb();
   });
-    var version='v1.8';
+    // var version='v1.8';
     var jeu_en_pause=false;
     
     function modePause() {
