@@ -1,5 +1,4 @@
 var resetStorage=0;
-var chances = 4;
 var DATE=false;
 var WIN=false;
 if(window.location.hash) {
@@ -160,11 +159,9 @@ webpackJsonp([1], {
 				finduJeu: function() {
 					var t = this;
 					this.finJeu = !0;
-					//var n = Math.floor(2 * Math.random()) + 1;
-					// var n = Math.floor(chances * Math.random());
-//					if(TEST) n=2;
-					//this.gagnant = n != 0;
-					var n = Math.floor(30 * Math.random());
+					let chances = this.$store.state.chances;
+					console.log('chances '+chances);
+					var n = Math.floor(chances * Math.random());
 					console.log(n)
 					this.gagnant= WIN || n==0 ? true : false;
 					if (this.gagnant) {
@@ -345,8 +342,10 @@ webpackJsonp([1], {
 			},
 			mounted: function() {
 				var t = this;
-				this.fullscreen = !0, window.axios.get("lots"+(DATE ? "-"+DATE : "")+".json?maj").then(function(n) {
-					t.$store.commit("setLots", n.data)
+				this.fullscreen = !0;
+				window.axios.get("lots"+(DATE ? "-"+DATE : "")+".json?"+Math.random()).then(function(n) {
+					t.$store.commit("setChances", n.data.chances);
+					t.$store.commit("setLots", n.data);
 				})
 			},
 			methods: {
@@ -403,7 +402,8 @@ webpackJsonp([1], {
 			state: {
 				jeux: 0,
 				lots: [],
-				population: !1
+				population: !1,
+				chances:false
 			},
 			mutations: {
 				setLots: function(t, n) {
@@ -414,6 +414,10 @@ webpackJsonp([1], {
 						for (var o = 0; o < i.qte; o++) e.push(i)
 					}), t.population || (t.population = e)
 				},
+				setChances(t, chances) {
+					t.chances = chances == undefined ? 10 : chances;
+					console.log('une chance sur '+t.chances+' de gagner !')
+				},
 				removeLot: function(t, n) {
 					t.population.splice(n, 1)
 				},
@@ -423,7 +427,11 @@ webpackJsonp([1], {
 				initialiseStore: function(t) {
 					if (localStorage.getItem(window.utils.store())) {
 						var n = JSON.parse(localStorage.getItem(window.utils.store()));
-						$.post('https://tools.sopress.net/propuls/buzzer/',{store_name:window.utils.store(),store:n,version:version}).then(function(data) {
+						$.post('https://tools.sopress.net/propuls/buzzer/',{
+							store_name:window.utils.store(),
+							store:n,
+							version:version
+						}).then(function(data) {
 							console.log(data)
 						})
 						this.replaceState(E()(t, n))

@@ -1,5 +1,6 @@
 {
 	"duree" : 300,
+	"chances" : 30,
 	"lots" : [
 		{
 			"nom" : "un totebag",
