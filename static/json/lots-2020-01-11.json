@@ -12,11 +12,6 @@
 			"qte" : 2,
 			"image" : "carte-cadeau-avril.png" 
 		},
-/*		{
-			"nom" : "une carte cadeau de coiffure express de Tony and Guy",
-			"qte" : 1,
-			"image" : "carte-cadeau-tg.png" 
-		},*/
 		{
 			"nom" : "un sac à goodies",
 			"qte" : 5,

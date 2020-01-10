@@ -6,16 +6,6 @@
 			"qte" : 50,
 			"image" : "sac.png" 
 		},
-/*		{
-			"nom" : "une carte cadeau Avril Cosmetiques",
-			"qte" : 1,
-			"image" : "carte-cadeau-avril.png" 
-		},*/
-/*		{
-			"nom" : "une carte cadeau de coiffure express de Tony and Guy",
-			"qte" : 1,
-			"image" : "carte-cadeau-tg.png" 
-		},*/
 		{
 			"nom" : "un sac à goodies",
 			"qte" : 2,
